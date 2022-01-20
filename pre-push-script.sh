@@ -36,6 +36,7 @@ then
 	echo "" >> $new_file
 	echo "set -e" >> $new_file
 	cat $setting_file >> $new_file
+	echo "git commit -am "Automatic commit for case something changed"
 	echo "# End of your custom commands" >> $new_file
 	echo "# ==================================================================" >> $new_file
 	tail -n +21  $git_sample >> $new_file
