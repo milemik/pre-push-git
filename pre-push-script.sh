@@ -8,8 +8,10 @@ new_file="test-pre-push"
 git_sample=".git/hooks/pre-push.sample"
 git_hooks_dir=".git/hooks/"
 
-if [[ -d $setting_file]]
+if [[ -d $setting_file ]]
 then
+    echo "Found $setting_file"
+else
     echo "Adding $setting_file file to current location"
     touch $setting_file
     echo "# enter your commands here" >> $setting_file
