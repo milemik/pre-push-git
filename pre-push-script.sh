@@ -41,7 +41,7 @@ then
 	tail -n +21  $git_sample >> $new_file
 	echo "Copy file to $git_hooks_dir"
 	cp $new_file "$git_hooks_dir/pre-push"
-	chown +x "$git_hooks_dir/pre-push"
+	chmod +x "$git_hooks_dir/pre-push"
 else
 	echo "Git dir found $gitdir"
 	exit 0
