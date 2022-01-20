@@ -12,6 +12,10 @@ you can clone this repo somewhere and move to your git root or from your root yo
     ```bash
     $ wget https://github.com/milemik/pre-push-git/blob/main/pre-push-script.sh
     ```
+    or
+    ```shell
+    $ curl https://raw.githubusercontent.com/milemik/pre-push-git/main/pre-push-script.sh --output pre-push-script.sh
+    ```
     This command will download pre-push-script.sh to your current location
 
 2. Run pre-push-script.sh
