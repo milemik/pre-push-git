@@ -1,2 +1,5 @@
 *.ini
 test.sh
+pre-test.sh
+# pre-push-local
+# pre-commit-local
