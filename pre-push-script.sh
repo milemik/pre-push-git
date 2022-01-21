@@ -22,7 +22,11 @@ then
 else
     echo "Adding $setting_file file to current location"
     touch $setting_file
-    echo "# enter your commands here" >> $setting_file
+	echo "[pre-commit]" >> $setting_file
+    echo "" >> $setting_file
+    echo "" >> $setting_file
+    echo "[pre-push]" >> $setting_file
+    echo "" >> $setting_file
     echo "$setting_file added"
     echo "Please fill in the $setting_file add commands like you would run them from the terminal, one command per line"
     exit
@@ -71,6 +75,7 @@ then
 	echo "Copy file to $git_hooks_dir"
 	cp $push_file "$git_hooks_dir/pre-push"
 	chmod +x "$git_hooks_dir/pre-push"
+	rm $push_file
 
 	# SET PRE-COMMIT
 	head -n 20 $git_commit_sample > $commit_file
@@ -107,6 +112,7 @@ then
 	echo "Copy file to $git_hooks_dir"
 	cp $commit_file "$git_hooks_dir/pre-commit"
 	chmod +x "$git_hooks_dir/pre-commit"
+	rm $commit_file
 else
 	echo "Git dir found $gitdir"
 	exit 0
