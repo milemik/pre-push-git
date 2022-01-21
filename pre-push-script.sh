@@ -37,12 +37,6 @@ then
 	# SET-PRE-PUSH
 	echo "Git directory found!"
 	setting=$(cat $setting_file)
-	# copy pre-push.sample to new file
-	# cp .git/hooks/pre-push.sample test-pre-push
-	# echo $setting >> $new_file
-	# sed "18a\$setting" < $new_file
-	# head -n 20 $git_push_sample > $push_file
-	# echo "" >> $push_file
 	echo "# ==================================================================" >> $push_file
 	echo "# Your commands came here" >> $push_file
 	echo "# PLEASE BE SHURE THAT YOU HAVE ALL DEPENDECIES FOR YOUR COMMANDS" >> $push_file
@@ -66,16 +60,14 @@ then
 			fi
 		fi
 	done
-	echo "# End of your custom commands" >> $new_file
-	echo "# ==================================================================" >> $commit_file
-	# tail -n +21  $git_push_sample >> $push_file
+	echo "# End of your custom commands" >> $push_file
+	echo "# ==================================================================" >> $push_file
 	echo "Copy file to $git_hooks_dir"
 	cp $push_file "$git_hooks_dir/pre-push"
 	chmod +x "$git_hooks_dir/pre-push"
 	rm $push_file
 
 	# SET PRE-COMMIT
-	# head -n 20 $git_commit_sample > $commit_file
 	echo "" >> $commit_file
 	echo "# ==================================================================" >> $commit_file
 	echo "# Your commands came here" >> $commit_file
@@ -102,7 +94,6 @@ then
 	done
 	echo "# End of your custom commands" >> $commit_file
 	echo "# ==================================================================" >> $commit_file
-	# tail -n +21  $git_commit_sample >> $commit_file
 	echo "Copy file to $git_hooks_dir"
 	cp $commit_file "$git_hooks_dir/pre-commit"
 	chmod +x "$git_hooks_dir/pre-commit"
