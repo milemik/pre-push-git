@@ -8,8 +8,8 @@ commit_file="pre-commit-local"
 git_hooks_dir=".git/hooks/"
 
 # Files that git uses for pre-commit and pre-push
-git_pre_commit_file = "$git_hooks_dir/pre-commit"
-git_pre_push_file = "$git_hooks_dir/pre-push"
+git_pre_commit_file="$git_hooks_dir/pre-commit"
+git_pre_push_file="$git_hooks_dir/pre-push"
 
 # COMMANDS FOR CHECK WHICH COMMAND GOES TO WHICH FILE
 # based on the .ini file with commands
@@ -38,7 +38,7 @@ then
 	then
 		echo "Removing $setting_file"
 		rm $setting_file
-	if
+	fi
 
 	rm "pre-test.sh"
 	echo "All files removed"
