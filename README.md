@@ -43,7 +43,7 @@ This way you can include pre-push-script.sh and pre-push-commands.ini file in yo
     "flake8"
 
     [pre-push]
-    "pytest"
+    "pipenv check"
     ```
     ##### NOTE: be sure to suround your commands with quotes and have all dependecies for your commands
 4. After you add commands you want to .ini file that is created you need run bash script again. This time pre-commit and pre-push files will be added to .git/hooks directory as explained in ***about*** section
@@ -63,3 +63,4 @@ This will delete this files:
 pre-push-commands.sh
 pre-push-script.sh
 ```
+
